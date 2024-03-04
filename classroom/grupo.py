@@ -13,17 +13,13 @@ class Grupo:
             self._asignaturas.append(Asignatura(x))
 
 
-    def agregarAlumno(self, alumno, lista=None):
-        if lista == None:
-            lista=[]
-            lista.append(alumno)
-            self.listadoAlumnos = self.listadoAlumnos + lista
-        else:
-            lista.append(alumno)
-            self.listadoAlumnos = self.listadoAlumnos + lista
+    def agregarAlumno(self, alumno, lista=[]):
+        lista.append(alumno)
+        self.listadoAlumnos = self.listadoAlumnos + lista
+        lista.remove(alumno)
 
-    # def __str__(self):
-    #     pass
+    def __str__(self):
+         return "Grupo de estudiantes:",Grupo
 
     @ classmethod
     def asignarNombre(cls, nombre="Grado 6"):
